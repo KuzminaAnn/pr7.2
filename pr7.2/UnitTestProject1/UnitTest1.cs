@@ -8,8 +8,13 @@ namespace UnitTestProject1
     public class UnitTest1
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethodBase()
         {
+            var page = new PageStart();
+            string text = "привет";
+            int shift = 2;
+            string answer = "сткджф";
+            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
         }
     }
 }

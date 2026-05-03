@@ -32,7 +32,7 @@
         <TextBox x:Name="cipher" Grid.Row="2" Grid.Column="1" Margin="10" Width="150" Height="35" FontSize="25"/>
         <TextBox x:Name="shift" Grid.Row="3" Grid.Column="1" Margin="10" Width="150" Height="35" FontSize="25"/>
         <TextBox x:Name="answer" Grid.Row="1" Grid.Column="3" Margin="10" Width="150" Height="35" FontSize="25" IsReadOnly="True"/>
-        <Button x:Name="rezul" Grid.Column="1" Grid.Row="4" Content="Вычислить" FontSize="25" Margin="5" Width="150" Height="35"/>
+        <Button x:Name="rezul" Grid.Column="1" Grid.Row="4" Content="Вычислить" FontSize="25" Margin="5" Width="150" Height="35" Click="rezul_Click"/>
         <Button x:Name="clear" Grid.Column="2" Grid.Row="4" Content="Очистить" FontSize="25" Margin="5" Width="150" Height="35"/>
     </Grid>
 </Page>

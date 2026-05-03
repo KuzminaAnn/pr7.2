@@ -24,5 +24,17 @@ namespace pr7._2
         {
             InitializeComponent();
         }
+        private void rezul_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        public bool EncryptCaesar(string text, int shift)
+        {
+
+        }
+        public bool DecryptCaesar(string cipher, int shift)
+        {
+
+        }
     }
 }

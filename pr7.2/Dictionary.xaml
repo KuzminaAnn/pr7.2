@@ -5,9 +5,9 @@
     </Style>
     <Style TargetType="Button">
         <Setter Property="Background" Value="#F3E3D0"/>
-        <Setter Property="Foreground" Value="#81A6C6"/>
+        <Setter Property="Foreground" Value="#355775"/>
     </Style>
     <Style TargetType="TextBlock">
-        <Setter Property="Foreground" Value="#81A6C6"/>
+        <Setter Property="Foreground" Value="#355775"/>
     </Style>
 </ResourceDictionary>

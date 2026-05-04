@@ -58,6 +58,38 @@ namespace UnitTestProject1
             string answer = "cat";
             Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
         }
+        public void TestMethodMinRusShif()
+        {
+            var page = new PageStart();
+            string text = "сыр";
+            int shift = 0;
+            string answer = "сыр";
+            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+        }
+        public void TestMethodMinEnShif()
+        {
+            var page = new PageStart();
+            string text = "cat";
+            int shift = 0;
+            string answer = "cat";
+            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+        }
+        public void TestMethodMaxxRusShif()
+        {
+            var page = new PageStart();
+            string text = "сыр";
+            int shift = 34;
+            string answer = "тьс";
+            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+        }
+        public void TestMethodMaxxEnShif()
+        {
+            var page = new PageStart();
+            string text = "cat";
+            int shift = 26;
+            string answer = "dbu";
+            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+        }
         public void TestMethodRusShif()
         {
             var page = new PageStart();

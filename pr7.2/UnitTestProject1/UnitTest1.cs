@@ -86,7 +86,7 @@ namespace UnitTestProject1
         {
             var page = new PageStart();
             string text = "ca.t";
-            int shift = 26;
+            int shift = 27;
             string answer = "db.u";
             Assert.IsTrue(page.EncryptCaesar(text, shift), answer);
         }
@@ -185,7 +185,7 @@ namespace UnitTestProject1
         {
             var page = new PageStart();
             string text = "db.u";
-            int shift = 26;
+            int shift = 27;
             string answer = "ca.t";
             Assert.IsTrue(page.DecryptCaesar(text, shift), answer);
         }

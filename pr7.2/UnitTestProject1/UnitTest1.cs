@@ -14,7 +14,7 @@ namespace UnitTestProject1
             string text = "привет";
             int shift = 2;
             string answer = "сткджф";
-            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+            Assert.IsTrue(page.EncryptCaesar(text, shift), answer);
         }
         [TestMethod]
         public void TestMethodBaseEnShif()
@@ -23,7 +23,7 @@ namespace UnitTestProject1
             string text = "hello";
             int shift = 2;
             string answer = "jgnnq";
-            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+            Assert.IsTrue(page.EncryptCaesar(text, shift), answer);
         }
         [TestMethod]
         public void TestMethodHardRusShif()
@@ -32,7 +32,7 @@ namespace UnitTestProject1
             string text = "акула";
             int shift = 20;
             string answer = "уюжяу";
-            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+            Assert.IsTrue(page.EncryptCaesar(text, shift), answer);
         }
         public void TestMethodHardEnShif()
         {
@@ -40,7 +40,7 @@ namespace UnitTestProject1
             string text = "art";
             int shift = 20;
             string answer = "uln";
-            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+            Assert.IsTrue(page.EncryptCaesar(text, shift), answer);
         }
         public void TestMethodMaxRusShif()
         {
@@ -48,7 +48,7 @@ namespace UnitTestProject1
             string text = "сыр";
             int shift = 33;
             string answer = "сыр";
-            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+            Assert.IsTrue(page.EncryptCaesar(text, shift), answer);
         }
         public void TestMethodMaxEnShif()
         {
@@ -56,7 +56,7 @@ namespace UnitTestProject1
             string text = "cat";
             int shift = 26;
             string answer = "cat";
-            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+            Assert.IsTrue(page.EncryptCaesar(text, shift), answer);
         }
         public void TestMethodMinRusShif()
         {
@@ -64,7 +64,7 @@ namespace UnitTestProject1
             string text = "сыр";
             int shift = 0;
             string answer = "сыр";
-            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+            Assert.IsTrue(page.EncryptCaesar(text, shift), answer);
         }
         public void TestMethodMinEnShif()
         {
@@ -72,23 +72,23 @@ namespace UnitTestProject1
             string text = "cat";
             int shift = 0;
             string answer = "cat";
-            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+            Assert.IsTrue(page.EncryptCaesar(text, shift), answer);
         }
         public void TestMethodMaxxRusShif()
         {
             var page = new PageStart();
-            string text = "сыр";
+            string text = "сы.р";
             int shift = 34;
-            string answer = "тьс";
-            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+            string answer = "ть.с";
+            Assert.IsTrue(page.EncryptCaesar(text, shift), answer);
         }
         public void TestMethodMaxxEnShif()
         {
             var page = new PageStart();
-            string text = "cat";
+            string text = "ca.t";
             int shift = 26;
-            string answer = "dbu";
-            Assert.IsTrue(page.EncryptCaesar(string text, int shift), answer);
+            string answer = "db.u";
+            Assert.IsTrue(page.EncryptCaesar(text, shift), answer);
         }
         public void TestMethodRusShif()
         {
@@ -96,7 +96,7 @@ namespace UnitTestProject1
             string text = "абв";
             int shift = 2;
             string answer = "абв";
-            Assert.IsFalse(page.EncryptCaesar(string text, int shift), answer);
+            Assert.IsFalse(page.EncryptCaesar(text, shift), answer);
         }
         public void TestMethodEnShif()
         {
@@ -104,7 +104,7 @@ namespace UnitTestProject1
             string text = "abc";
             int shift = 2;
             string answer = "abc";
-            Assert.IsFalse(page.EncryptCaesar(string text, int shift), answer);
+            Assert.IsFalse(page.EncryptCaesar(text, shift), answer);
         }
         [TestMethod]
         public void TestMethodBaseRusDeshif()
@@ -113,16 +113,16 @@ namespace UnitTestProject1
             string cipher = "сткджф";
             int shift = 2;
             string answer = "привет";
-            Assert.IsTrue(page.DecryptCaesar(string cipher, int shift), answer);
+            Assert.IsTrue(page.DecryptCaesar(cipher, shift), answer);
         }
         [TestMethod]
         public void TestMethodBaseEnDeshif()
         {
             var page = new PageStart();
-            string cipher = "jgnnqhello";
+            string cipher = "jgnnq";
             int shift = 2;
             string answer = "hello";
-            Assert.IsTrue(page.DecryptCaesar(string cipher, int shift), answer);
+            Assert.IsTrue(page.DecryptCaesar(cipher, shift), answer);
         }
         [TestMethod]
         public void TestMethodHardRusDeshif()
@@ -131,7 +131,7 @@ namespace UnitTestProject1
             string cipher = "уюжяу";
             int shift = 20;
             string answer = "акула";
-            Assert.IsTrue(page.DecryptCaesar(string cipher, int shift), answer);
+            Assert.IsTrue(page.DecryptCaesar(cipher, shift), answer);
         }
         public void TestMethodHardEnDeshif()
         {
@@ -139,7 +139,7 @@ namespace UnitTestProject1
             string cipher = "uln";
             int shift = 20;
             string answer = "art";
-            Assert.IsTrue(page.DecryptCaesar(string cipher, int shift), answer);
+            Assert.IsTrue(page.DecryptCaesar(cipher, shift), answer);
         }
         public void TestMethodMaxRusDeshif()
         {
@@ -147,7 +147,7 @@ namespace UnitTestProject1
             string cipher = "сыр";
             int shift = 33;
             string answer = "сыр";
-            Assert.IsTrue(page.DecryptCaesar(string cipher, int shift), answer);
+            Assert.IsTrue(page.DecryptCaesar(cipher, shift), answer);
         }
         public void TestMethodMaxEnDeshif()
         {
@@ -155,7 +155,39 @@ namespace UnitTestProject1
             string cipher = "cat";
             int shift = 26;
             string answer = "cat";
-            Assert.IsTrue(page.DecryptCaesar(string cipher, int shift), answer);
+            Assert.IsTrue(page.DecryptCaesar(cipher, shift), answer);
+        }
+        public void TestMethodMinRusDeshif()
+        {
+            var page = new PageStart();
+            string text = "сыр";
+            int shift = 0;
+            string answer = "сыр";
+            Assert.IsTrue(page.DecryptCaesar(text, shift), answer);
+        }
+        public void TestMethodMinEnDeshif()
+        {
+            var page = new PageStart();
+            string text = "cat";
+            int shift = 0;
+            string answer = "cat";
+            Assert.IsTrue(page.DecryptCaesar(text, shift), answer);
+        }
+        public void TestMethodMaxxRusDeshif()
+        {
+            var page = new PageStart();
+            string text = "ть.с";
+            int shift = 34;
+            string answer = "сы.р";
+            Assert.IsTrue(page.DecryptCaesar(text, shift), answer);
+        }
+        public void TestMethodMaxxEnDeshif()
+        {
+            var page = new PageStart();
+            string text = "db.u";
+            int shift = 26;
+            string answer = "ca.t";
+            Assert.IsTrue(page.DecryptCaesar(text, shift), answer);
         }
         public void TestMethodRusDeshif()
         {
@@ -163,7 +195,7 @@ namespace UnitTestProject1
             string cipher = "абв";
             int shift = 2;
             string answer = "абв";
-            Assert.IsFalse(page.DecryptCaesar(string cipher, int shift), answer);
+            Assert.IsFalse(page.DecryptCaesar(cipher, shift), answer);
         }
         public void TestMethodEnDeshif()
         {
@@ -171,7 +203,7 @@ namespace UnitTestProject1
             string cipher = "abc";
             int shift = 2;
             string answer = "abc";
-            Assert.IsFalse(page.DecryptCaesar(string cipher, int shift), answer);
+            Assert.IsFalse(page.DecryptCaesar(cipher, shift), answer);
         }
     }
 }

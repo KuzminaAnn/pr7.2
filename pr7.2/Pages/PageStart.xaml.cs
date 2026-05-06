@@ -24,10 +24,20 @@ namespace pr7._2
         private const string EnLower = "abcdefghijklmnopqrstuvwxyz";
         private const string RuUpper = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
         private const string RuLower = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+        /// <summary>
+        /// Инициализирует новый экземпляр класса
+        /// </summary>
         public PageStart()
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Обработчик нажатия кнопки для запуска шифрования или дешифрования. Определяет действие
+        /// на основе того, какое поле ввода пусто: если пусто поле шифротекста — выполняется
+        /// шифрование, если пусто поле исходного текста — выполняется дешифрование.
+        /// </summary>
+        /// <param name="sender">Источник события.</param>
+        /// <param name="e">Данные события.</param>
         private void rezul_Click(object sender, RoutedEventArgs e)
         {
             string ccipher = cipher.Text;
@@ -43,6 +53,14 @@ namespace pr7._2
                 EncryptCaesar(ttext, sshift);
             }
         }
+        /// <summary>
+        /// Шифрует исходный текст методом шифра Цезаря с указанным сдвигом. Результат выводится
+        /// в элемент интерфейса answer. Поддерживает английский и русский алфавиты
+        /// (верхний и нижний регистры).
+        /// </summary>
+        /// <param name="ttext">Исходный текст для шифрования.</param>
+        /// <param name="sshift">Величина сдвига для шифрования.</param>
+        /// <returns>Возвращает true, если операция выполнена успешно.</returns>
         public bool EncryptCaesar(string ttext, int sshift)
         {
             var result = new StringBuilder(ttext.Length);
@@ -52,24 +70,39 @@ namespace pr7._2
                 if (TryGetAlphabet(c, out string alphabet, out int index))
                 {
                     int len = alphabet.Length;
-                    // Нормализация сдвига: корректно обрабатывает отрицательные и большие значения
+
                     int normShift = ((sshift % len) + len) % len;
                     int newIndex = (index + normShift) % len;
                     result.Append(alphabet[newIndex]);
                 }
                 else
                 {
-                    // Пробелы, цифры, знаки препинания и другие символы остаются без изменений
                     result.Append(c);
                 }
             }
             answer.Text = Convert.ToString(result);
             return true;
         }
+        /// <summary>
+        /// Дешифрует текст, зашифрованный методом шифра Цезаря. Выполняется путем вызова
+        /// метода шифрования с инвертированным (отрицательным) сдвигом.
+        /// </summary>
+        /// <param name="ccipher">Зашифрованный текст.</param>
+        /// <param name="sshift">Величина сдвига, использованная при шифровании.</param>
+        /// <returns>Возвращает true, если операция выполнена успешно.</returns>
         public bool DecryptCaesar(string ccipher, int sshift)
         {
             return EncryptCaesar(ccipher, -sshift);
         }
+        /// <summary>
+        /// Определяет, к какому алфавиту принадлежит символ, и возвращает этот алфавит
+        /// вместе с индексом символа в нем.
+        /// </summary>
+        /// <param name="c">Символ для проверки.</param>
+        /// <param name="alphabet">Если метод вернул true, содержит строку алфавита
+        /// (англ/рус, верхний/нижний регистр), к которому относится символ.</param>
+        /// <param name="index">Если метод вернул true, содержит индекс символа в найденном алфавите.</param>
+        /// <returns>true, если символ найден в одном из поддерживаемых алфавитов; иначе false.</returns>
         private static bool TryGetAlphabet(char c, out string alphabet, out int index)
         {
             index = EnUpper.IndexOf(c);
@@ -88,7 +121,12 @@ namespace pr7._2
             index = -1;
             return false;
         }
-
+        /// <summary>
+        /// Обработчик нажатия кнопки очистки. Очищает поля ввода исходного текста,
+        /// шифротекста, сдвига и поле вывода результата.
+        /// </summary>
+        /// <param name="sender">Источник события.</param>
+        /// <param name="e">Данные события.</param>
         private void clear_Click(object sender, RoutedEventArgs e)
         {
             cipher.Text = String.Empty;

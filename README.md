@@ -21,4 +21,7 @@ shift) и DecryptCaesar(string cipher, int shift).
 
 Итог обозревателя тестов:
 
-<img width="1186" height="593" alt="image" src="https://github.com/user-attachments/assets/6489500f-67ea-4570-adaa-abf02196764e" />
+<img width="1186" height="593" alt="image" src="https://github.com/KuzminaAnn/pr7.2/blob/master/pr7.2/%D0%A4%D0%B0%D0%B9%D0%BB%D1%8B/Picture1.png" />
+
+Вывод: В ходе работы над заданием багов не было обнаружено. Создание автоматизированных тестов перед разработкой кода помогло получше определить его структуру,
+необходимые переменные и методы. Были применены техники автоматизированного иручного тестирования для проверки корректности работы программы.
